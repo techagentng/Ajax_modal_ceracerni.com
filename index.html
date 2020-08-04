@@ -7,37 +7,60 @@
     <link rel="shortcut icon" href="img/cropped-favicon-192x192.png" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <title>OOP practise</title>
-	<meta name="msapplication-TileImage" content="img/cropped-favicon-270x270.png">
-	<link rel="stylesheet" href="main.css">
-	<style>
-
-	</style>
+    <title>Nav Practice</title>
+    <meta name="msapplication-TileImage" content="img/cropped-favicon-270x270.png">
+	<link rel="stylesheet" href="style.css"> 
+	
 </head>
 <body>
-  <button onclick="loadAjaxText()" id="button">Click me</button>
- 
- <script>
-	//  My first AJAx call to an endpoint
-	var button_tag = document.getElementById('button').addEventListener('click', loadAjaxText)
-	function loadAjaxText(){
-		// Create XHR object
-		var xhr = new XMLHttpRequest();
-		// Request function, with open fuction
-		// OPEN - request type, file/url, acyncronousness=true
-		xhr.open('GET', 'user.json', true);
-		xhr.onload = function(){
-			if(this.status == 200){
-			  console.log(this.responseText);
-			}
-		}
-		// Sends rquest mandatory to see result in the console
-        xhr.send();
-		//Request type
-		// Request URL
-  }
- </script>
+    <button class="modal-btn">button click</button>
+<div class="modal-bg">
+    <div class="moda">
+        <form action="">
+            <div class="form-grp">
+                <input class="one" type="text name="name" placeholder="Name">
+                <input class="one" type="text name="design" placeholder="Phone number">
+            </div>
 
+            <div class="form-grp">
+                <input  class="one" type="text name="name" placeholder="Size of Wall in inches or meter">
+                <input  class="one" type="text name="design" placeholder="Location">
+            </div>
+          
+        <div class="form-grp">
+            <select id="cars" class="one">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select> 
+            <input type="file" id="input-file-now" class="one"/>
+           
+        </div>               
+        
+          
+            <button class="modal-submit">Generate Quote</button>
+        
+          
+           
+            <span class="modal-close">X</span>
+        </form>
+      
+        
+    </div>
+  
+</div>
+
+<script type="text/javascript">
+    var modalBtn = document.querySelector('.modal-btn');
+    var modalBg = document.querySelector('.modal-bg');
+    modalBtn.addEventListener('click', function(){
+    modalBg.classList.add('bg-active');
+    var closeModal = document.querySelector('.modal-close');
+    closeModal.addEventListener('click', function(){
+        modalBg.classList.remove('bg-active');
+    });
+});
+</script>  
 </body>
-<script src="main.js"></script>
 </html>
