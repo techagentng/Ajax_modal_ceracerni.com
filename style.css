@@ -1,5 +1,7 @@
 :root{
-    --primary-color:;
+    --primary-color: rgba(13, 110, 139, 0.75); /* last value makes it transparent*/
+    --overlay-color:    rgba(24, 39, 51, 0.85);
+    --menu-speed: 0.75s;
 }
 *{
     margin: 0;
@@ -7,15 +9,110 @@
     box-sizing: border-box;
 }
 body{
-    font: font: 16px; 
-	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
-	position: relative;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;    
 }
-.table-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 500px;
-  top: 50%;
+.modal-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(72,8,64,0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    visibility: hidden; 
+    transition: visibility 0s, opacity 0.5s; 
+}
+ .bg-active{
+    visibility: visible;
+    opacity: 1;
+} 
+.moda{
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    width: 40%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin: 0 auto;
+    position: relative;
+}
+.modal-button{
+    padding: 14px 30px;
+    background-color: rgba(13, 110, 139, 0.75);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.modal-submit{
+    padding: 14px 30px;
+    background-color: purple;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.modal-submit:hover{
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    color: black;
+}
+.modal-close{
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+}
+form{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+.form-grp{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.one{
+    background: white;
+    width: 48%;
+    color: black;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 10px;
+}
+.file-upload{
+    width: 20%;
+}
+@media(max-width: 768px){
+    .form-grp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        height: 160px;
+    }
+    .moda{
+        height: 100vh;
+        width: 100%;
+    }
+   .one{
+       width: 90%;
+       margin-bottom: 10px;
+       border-radius: 20px;
+   }
+   form{
+       position: absolute;
+       top: 0;
+   }
 }
